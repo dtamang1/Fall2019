@@ -1,0 +1,10 @@
+$Source = ""
+$Dest = ""
+$FileName = ""
+
+(if-test -Path ($Source+$FileName_org)){
+    $SourceFile = $Source+$FileName}
+  
+ else{
+     $FileSource = $Source+$FileName}
+Copy-item Path $SourceFile Destination $Dest
