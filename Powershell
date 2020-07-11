@@ -1,0 +1,32 @@
+Set-Location c:
+Function RenameFile ($Path, $extension)
+
+{
+    $Path = ""
+    $extension =  ("{0:MMdd}" -f(get-date).AddDays(-1)) # if file is less then today(meaning file from yesterday)
+
+    $OldFile = $Path + $extension
+    $NewFile = ""
+
+    Rename-Item $OldFile $NewFile
+ 
+}
+
+RenameFile -Path $Path -extension $extension 
+
+#The following code just change the file name. 
+Set-Location c:
+Function RenameFile ($Path, $FileName)
+
+{
+    $Path = ""
+    $FileName = ""
+   
+
+    $OldFile = $Path + $FileName
+    $NewFile = "TDBank_Input.txt"
+
+    Rename-Item $OldFile $NewFile
+}
+
+RenameFile -Path $Path -FileName $FileName 
